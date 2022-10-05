@@ -1,0 +1,126 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("THEMO KUB", "DarkTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Click")
+Section:NewToggle("ON/OFF", "Auto Click", function(t)
+_G.A = t
+end)
+
+spawn(function()
+    while wait() do
+        if _G.A then
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTopSpeed:FireServer(1)
+        end
+    end
+end)
+
+local Section = Tab:NewSection("Rebirth Options")
+
+Section:NewToggle("ON/OFF", "Rebirths Options", function(t)
+_G.B = t
+end)
+
+spawn(function()
+    while wait() do
+        if _G.B then
+            game:GetService("ReplicatedStorage").Shared.RebirthSystem.BuyRebirth:InvokeServer()
+        end
+    end
+end)
+
+
+
+local Section = Tab:NewSection("Auto Win Options")
+
+Section:NewToggle("ON/OFF", "Auto Win Options", function(t)
+_G.C = t
+end)
+
+spawn(function()
+    while wait(1) do
+        if _G.C then
+            game:GetService("ReplicatedStorage").RemoteEvents.RewardWins:FireServer()
+        end
+    end
+end)
+
+local Section = Tab:NewSection("SpeedBurst Options")
+
+Section:NewToggle("ON/OFF", "SpeedBurst Options", function(t)
+_G.D = t
+end)
+
+spawn(function()
+    while wait(.1) do
+        if _G.D then
+            game:GetService("ReplicatedStorage").RemoteEvents.SpeedBurst:FireServer(1)
+        end
+    end
+end)
+
+local Tab = Window:NewTab("Auto Buy")
+local Section = Tab:NewSection("Auto Buy")
+Section:NewToggle("WeightPlateBag", "WeightPlateBag", function(t)
+    _G.F = t
+    end)
+    
+    spawn(function()
+        while wait(2) do
+            if _G.F then
+                game:GetService("ReplicatedStorage").Shared.Inventory.RewardItem:InvokeServer(game:GetService("ReplicatedStorage").Profiles.THEMO27.Inventory,"WeightPlateBag")
+            end
+        end
+    end)
+
+    Section:NewToggle("KettlebellBag", "KettlebellBag", function(t)
+        _G.G = t
+        end)
+        
+        spawn(function()
+            while wait(2) do
+                if _G.G then
+                    game:GetService("ReplicatedStorage").Shared.Inventory.RewardItem:InvokeServer(game:GetService("ReplicatedStorage").Profiles.THEMO27.Inventory,"KettlebellBag")
+                end
+            end
+        end)
+
+        Section:NewToggle("SmallBarbellBag", "SmallBarbellBag", function(t)
+            _G.H = t
+            end)
+            
+            spawn(function()
+                while wait(2) do
+                    if _G.H then
+                        game:GetService("ReplicatedStorage").Shared.Inventory.RewardItem:InvokeServer(game:GetService("ReplicatedStorage").Profiles.THEMO27.Inventory,"SmallBarbellBag")
+                    end
+                end
+            end)
+
+            Section:NewToggle("TonBlockBag", "TonBlockBag", function(t)
+                _G.I = t
+                end)
+                
+                spawn(function()
+                    while wait(2) do
+                        if _G.I then
+                            game:GetService("ReplicatedStorage").Shared.Inventory.RewardItem:InvokeServer(game:GetService("ReplicatedStorage").Profiles.THEMO27.Inventory,"TonBlockBag")
+                        end
+                    end
+                end)
+
+                Section:NewToggle("WavyBarbellBag", "WavyBarbellBag", function(t)
+                    _G.J = t
+                    end)
+                    
+                    spawn(function()
+                        while wait(2) do
+                            if _G.J then
+                                game:GetService("ReplicatedStorage").Shared.Inventory.RewardItem:InvokeServer(game:GetService("ReplicatedStorage").Profiles.THEMO27.Inventory,"WavyBarbellBag")
+                            end
+                        end
+                    end)
+
+
+local Tab = Window:NewTab("Cerdit")
+local Section = Tab:NewSection("script By THEMO")
+local Section = Tab:NewSection("Thank you for using my script.")
